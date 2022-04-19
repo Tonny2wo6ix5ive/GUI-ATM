@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="671.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiatm.Accounts">
    <children>
-      <Button layoutX="104.0" layoutY="367.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Sign Out" />
-      <Label alignment="CENTER" layoutX="214.0" layoutY="27.0" prefHeight="58.0" prefWidth="229.0" text="welcome..." textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="40.0" />
-         </font>
-      </Label>
-      <Label layoutX="59.0" layoutY="100.0" text="Label" />
+      <BorderPane layoutX="111.0" layoutY="65.0" prefHeight="440.0" prefWidth="671.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="440.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FontAwesomeIcon iconName="USER" size="5em" textAlignment="CENTER" wrappingWidth="190.47616958618164" />
+               </children></VBox>
+         </left>
+         <center>
+            <Pane prefHeight="275.0" prefWidth="530.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="109.0" prefHeight="23.0" prefWidth="122.0" text="Label">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="176.0" text="deposit:" />
+                  <TextField fx:id="deposit" layoutX="84.0" layoutY="172.0" />
+                  <Label layoutX="32.0" layoutY="220.0" text="Balance:" />
+                  <Label fx:id="balance" layoutX="85.0" layoutY="220.0" text="0" />
+                  <Button layoutX="241.0" layoutY="172.0" mnemonicParsing="false" onAction="#depobtn" text="Button" />
+                  <TextField fx:id="confirmAcc" layoutX="84.0" layoutY="141.0" />
+                  <Label layoutX="32.0" layoutY="145.0" text="Acc No:" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
