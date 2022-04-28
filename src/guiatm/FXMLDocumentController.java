@@ -25,7 +25,7 @@ import javafx.scene.layout.Pane;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private BorderPane mainPane;
+     BorderPane mainPane;
     
     @FXML
     private Pane childPane;
@@ -49,7 +49,7 @@ public class FXMLDocumentController implements Initializable {
      TextField newAccNo;
 
     @FXML
-    private PasswordField password;
+     PasswordField password;
     
     PreparedStatement pst;
     Connection con;
@@ -78,6 +78,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void signInBTN(ActionEvent event) throws SQLException {
         connection();
+        
         String accountN = accNo.getText();
         int accountN1 = Integer.parseInt(accountN);
         String psswrd = password.getText();
@@ -130,9 +131,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void signUpBTN(ActionEvent event) {
         connection();
-        Accounts call = new Accounts();
-        call.accountDetails();
-        
         
         String newAccount = newAccNo.getText();
         String fNam = fName.getText();

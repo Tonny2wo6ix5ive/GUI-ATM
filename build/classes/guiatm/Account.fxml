@@ -3,40 +3,63 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiatm.Accounts">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="440.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiatm.Accounts">
    <children>
-      <BorderPane layoutX="111.0" layoutY="65.0" prefHeight="440.0" prefWidth="671.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox prefHeight="440.0" prefWidth="177.0" BorderPane.alignment="CENTER">
-               <children>
-                  <FontAwesomeIcon iconName="USER" size="5em" textAlignment="CENTER" wrappingWidth="190.47616958618164" />
-               </children></VBox>
-         </left>
-         <center>
-            <Pane prefHeight="275.0" prefWidth="530.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="109.0" prefHeight="23.0" prefWidth="122.0" text="Label">
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="32.0" layoutY="176.0" text="deposit:" />
-                  <TextField fx:id="deposit" layoutX="84.0" layoutY="172.0" />
-                  <Label layoutX="32.0" layoutY="220.0" text="Balance:" />
-                  <Label fx:id="balance" layoutX="85.0" layoutY="220.0" text="0" />
-                  <Button layoutX="241.0" layoutY="172.0" mnemonicParsing="false" onAction="#depobtn" text="Button" />
-                  <TextField fx:id="confirmAcc" layoutX="84.0" layoutY="141.0" />
-                  <Label layoutX="32.0" layoutY="145.0" text="Acc No:" />
-               </children>
-            </Pane>
-         </center>
-      </BorderPane>
+      <Pane prefHeight="440.0" prefWidth="671.0" style="-fx-background-color: #1e1784;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="506.0" layoutY="371.0" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="132.0" text="Sign Out" />
+            <Label layoutX="442.0" layoutY="63.0" text="Send Money to another account" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="otherAccountNo" alignment="CENTER" layoutX="449.0" layoutY="108.0" prefHeight="25.0" prefWidth="202.0" promptText="Account Number" />
+            <Button layoutX="449.0" layoutY="208.0" mnemonicParsing="false" onAction="#sendMoney" prefHeight="25.0" prefWidth="202.0" text="Send" />
+            <Separator layoutX="427.0" layoutY="8.0" orientation="VERTICAL" prefHeight="425.0" prefWidth="0.0" />
+            <Label layoutX="183.0" layoutY="63.0" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amountSend" alignment="CENTER" layoutX="447.0" layoutY="155.0" prefHeight="25.0" prefWidth="202.0" promptText="Amount" />
+            <Label layoutX="183.0" layoutY="63.0" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="204.0" layoutY="8.0" orientation="VERTICAL" prefHeight="425.0" prefWidth="0.0" />
+            <FontAwesomeIcon fill="#d0dee6" iconName="USER" layoutX="75.0" layoutY="84.0" size="5em" />
+            <Label fx:id="displayName" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="98.0" prefHeight="20.0" prefWidth="195.0" text="name" textAlignment="CENTER" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="displayNumber" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="123.0" prefHeight="20.0" prefWidth="195.0" text="Account number" textAlignment="CENTER" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Balance" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="145.0" prefHeight="20.0" prefWidth="195.0" text="0" textAlignment="CENTER" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="depositAmount" alignment="CENTER" layoutX="214.0" layoutY="110.0" prefHeight="25.0" prefWidth="202.0" promptText="Amount" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="63.0" prefHeight="20.0" prefWidth="195.0" text="Personal Transactions" textAlignment="CENTER" textFill="#d0dee6">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="214.0" layoutY="155.0" mnemonicParsing="false" onAction="#depositButton" prefHeight="25.0" prefWidth="202.0" text="deposit" />
+            <Button layoutX="217.0" layoutY="358.0" mnemonicParsing="false" onAction="#withdrawButton" prefHeight="25.0" prefWidth="202.0" text="Withdraw" />
+            <TextField fx:id="withdrawAmount" alignment="CENTER" layoutX="217.0" layoutY="309.0" prefHeight="25.0" prefWidth="202.0" promptText="Amount" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
